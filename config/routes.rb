@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :users, only: [ :show ]
-
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   devise_scope :user do
@@ -10,6 +8,10 @@ Rails.application.routes.draw do
 
 
   root to: "events#index"
+
+  resources :users, only: [ :show ]
+
+  resources :events, only: [ :index, :new, :create, :show ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
