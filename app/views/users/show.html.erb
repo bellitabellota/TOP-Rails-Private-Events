@@ -1,0 +1,13 @@
+<h1>All events you created:</h1>
+
+<% if @events_created.any? %>
+  <% @events_created.each do | event| %>
+    <div class="event-created">
+      <h2><%= event.name %></h2>
+      <p><%= event.location %></p>
+      <p><%= event.date %></p>
+    </div>
+  <% end %>
+<% else %>
+ <p> You have not created any events yet. </p>
+<% end %>
