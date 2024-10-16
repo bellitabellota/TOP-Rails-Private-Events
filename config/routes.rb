@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show ]
 
-  resources :events, only: [ :index, :new, :create, :show ]
+  resources :events, only: [ :index, :new, :create, :show ] do
+    resources :event_attendings, only: [ :new, :create ]
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
