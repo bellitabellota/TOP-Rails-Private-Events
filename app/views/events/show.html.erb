@@ -15,3 +15,11 @@
   <div class="<%= name %>"><%= message %></div>
 <% end %>
 
+<% if @event.attendees.any? %>
+  <h3>All attendees</h3>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+    <li><%= attendee.name %></li>
+    <% end %>
+  </ul>
+<% end %>
