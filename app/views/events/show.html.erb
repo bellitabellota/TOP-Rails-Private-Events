@@ -1,5 +1,17 @@
-<p>The details of the event you created are:</p>
+<p>The details of the event are:</p>
 <h1><%= @event.name %></h1>
 <p>Date: <%= @event.date %></p>
 <p>Location: <%= @event.location %></p>
 <p>Creator: <%= @event.creator.name %></p>
+
+<%= form_with model: [@event, @event.event_attendings.build ] do | form |%>
+<%= form.hidden_field :attended_event_id, value: "#{@event.id}" %>
+<%= form.hidden_field :event_attendee_id, value: "#{current_user.id}" %>
+<%= form.submit "Attend" %>
+<% end %>
+
+<% flash.each do |name, message| %>
+  <p></p>
+  <div class="<%= name %>"><%= message %></div>
+<% end %>
+
