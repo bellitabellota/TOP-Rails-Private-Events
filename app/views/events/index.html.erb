@@ -8,6 +8,7 @@
       <h2><%= event.name %></h2>
       <p><%= event.location %></p>
       <p><%= event.date %></p>
+      <p><%= link_to "View", event_path(event.id) %></p>
     </div>
   <% end %>
   
