@@ -1,4 +1,6 @@
-<h1>All events you created:</h1>
+<h1>All your events</h1>
+
+<h2>All events you created:</h2>
 
 <% if @events_created.any? %>
   <% @events_created.each do | event| %>
@@ -10,4 +12,20 @@
   <% end %>
 <% else %>
  <p> You have not created any events yet. </p>
+<% end %>
+
+<br>
+
+<h2>All events you are attending or have been attending:</h2>
+
+<% if current_user.attended_events.any? %>
+  <% current_user.attended_events.each do | event | %>
+    <div class="event-attending">
+      <h2><%= event.name %></h2>
+      <p><%= event.location %></p>
+      <p><%= event.date %></p>
+    </div>
+  <% end %>
+<% else %>
+ <p> You have not planed to attend or attended any events yet. </p>
 <% end %>
