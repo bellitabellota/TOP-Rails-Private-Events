@@ -2,14 +2,31 @@
 
 <main> 
   <h1>Event Overview</h1>
-  
-  <% @events.each do |event| %>
-    <div class="event">
-      <h2><%= event.name %></h2>
-      <p><%= event.location %></p>
-      <p><%= event.date %></p>
-      <p><%= link_to "View", event_path(event.id) %></p>
-    </div>
+
+  <% if Event.upcoming.any?%>
+    <h2>Upcoming Events</h2>
+    <% Event.upcoming.each do |event| %>
+      <div class="event">
+        <h3><%= event.name %></h3>
+        <p><%= event.location %></p>
+        <p><%= event.date %></p>
+        <p><%= link_to "View", event_path(event.id) %></p>
+      </div>
+    <% end %>
   <% end %>
+
+    <% if Event.past.any?%>
+    <h2>Past Events</h2>
+    <% Event.past.each do |event| %>
+      <div class="event">
+        <h3><%= event.name %></h3>
+        <p><%= event.location %></p>
+        <p><%= event.date %></p>
+        <p><%= link_to "View", event_path(event.id) %></p>
+      </div>
+    <% end %>
+  <% end %>
+  
+  
   
 </main>
