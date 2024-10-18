@@ -23,6 +23,20 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(perm_event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def perm_event_params
