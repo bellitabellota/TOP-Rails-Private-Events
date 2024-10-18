@@ -29,4 +29,8 @@
     <li><%= attendee.name %></li>
     <% end %>
   </ul>
+
+  <% if @event.attendees.to_a.include?(current_user) %>
+   <%= link_to "Withdraw event attendance", [@event, @current_user_attending], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+  <% end %>
 <% end %>
