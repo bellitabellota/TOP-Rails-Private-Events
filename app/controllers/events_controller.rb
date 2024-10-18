@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @current_user_attending = @event.event_attendings.where("event_attendee_id = ?", current_user.id).first
   end
 
   def edit
