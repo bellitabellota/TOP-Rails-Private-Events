@@ -19,6 +19,7 @@
 
 <% if @event.creator.name == current_user.name%>
   <%= link_to "Edit event", edit_event_path(@event) %>
+  <%= link_to "Delete event", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 <% end %>
 
 <% if @event.attendees.any? %>
