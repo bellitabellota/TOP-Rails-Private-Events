@@ -12,6 +12,8 @@ class Event < ApplicationRecord
   #   Event.where("date < ?", Date.current)
   # end
 
+  validates :name, uniqueness: true
+
   scope :upcoming, -> { where("date >= ?", DateTime.current) }
 
   scope :past, -> { where("date < ?", DateTime.current) }
