@@ -11,6 +11,14 @@ class EventAttendingsController < ApplicationController
     end
   end
 
+  def destroy
+    @event = Event.find(params[:event_id])
+    @event_attending = EventAttending.find(params[:id])
+    @event_attending.destroy
+
+    redirect_to event_path(@event), status: :see_other
+  end
+
   private
 
   def perm_event_attending_params
