@@ -17,6 +17,10 @@
   <div class="<%= name %>"><%= message %></div>
 <% end %>
 
+<% if @event.creator.name == current_user.name%>
+  <%= link_to "Edit event", edit_event_path(@event) %>
+<% end %>
+
 <% if @event.attendees.any? %>
   <h3>All attendees</h3>
   <ul>
