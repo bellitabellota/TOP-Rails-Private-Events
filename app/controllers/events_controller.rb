@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show ]
+
   def index
     @events = Event.all
   end
@@ -21,7 +23,10 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @current_user_attending = @event.event_attendings.where("event_attendee_id = ?", current_user.id).first
+
+    if user_signed_in?
+      @current_user_attending = @event.event_attendings.where("event_attendee_id = ?", current_user.id).first
+    end
   end
 
   def edit
