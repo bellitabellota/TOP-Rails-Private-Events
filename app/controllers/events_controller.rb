@@ -22,7 +22,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @all_events = Event.all.includes(:attendees)
     @event = Event.find(params[:id])
 
     if user_signed_in?
