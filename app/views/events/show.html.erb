@@ -38,3 +38,9 @@
    <%= link_to "Withdraw event attendance", [@event, @current_user_attending], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
   <% end %>
 <% end %>
+
+<% @all_events.each do |event| %>
+<% event.attendees.each do |attendee| %>
+  <p><%= attendee.name %></p>
+<% end %>
+<% end %>
