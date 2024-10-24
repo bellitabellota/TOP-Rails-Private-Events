@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/921b83fc-31d3-42ee-9ed2-7e4e015403c0)
+
+
 # TOP Project: Private events
 You want to build a site similar to a private [Eventbrite](http://www.eventbrite.com/) which allows users to create events and then manage user signups.
 
