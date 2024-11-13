@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bruno+Ace&family=Iceberg&family=Nova+Square&family=Pinyon+Script&display=swap');
+
+:root {
+    --blue-500: #0679cc;
+  }
+  
+  body {
+    font-family: "Inter var", sans-serif;
+  }
+  
+  a {
+    color: var(--blue-500);
+  }
