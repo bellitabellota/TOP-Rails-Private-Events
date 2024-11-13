@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bruno+Ace&family=Iceberg&family=Nova+Square&family=Pinyon+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bruno+Ace&family=Iceberg&family=Nova+Square&family=Pinyon+Script&family=Zen+Dots&display=swap');
 :root {
     --blue-500: #0679cc;
   }
@@ -10,4 +10,25 @@
   
   a {
     color: var(--blue-500);
+  }
+
+  h1 {
+    font-family: "Zen Dots", sans-serif;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-family: "Zen Dots", sans-serif;
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin: 0.4rem 0;
   }
