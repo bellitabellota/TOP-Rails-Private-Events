@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_18_084506) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "name", unique: true
+    t.string "name"
     t.datetime "date"
     t.string "location"
     t.datetime "created_at", null: false
