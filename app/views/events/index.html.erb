@@ -10,7 +10,7 @@
           <hr>
           <p><%= event.location %></p>
           <p><%= event.date %></p>
-          <%= button_to "View", event_path(event.id) %>
+          <%= button_to "View", event_path(event.id), method: :get %>
         </div>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
           <hr>
           <p><%= event.location %></p>
           <p><%= event.date %></p>
-          <%= button_to "View", event_path(event.id) %>
+          <%= button_to "View", event_path(event.id), method: :get  %>
         </div>
       <% end %>
     </div>
