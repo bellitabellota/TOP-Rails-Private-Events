@@ -4,7 +4,7 @@ class EventAttendingsController < ApplicationController
 
     if @event_attending.save
       flash[:success] = "Your participation at this event is confirmed."
-      redirect_to event_path(:attended_event_id)
+      redirect_to event_path(@event_attending.attended_event_id)
     else
       flash.now[:error].now = "Your request was not correctly process. Please try again or contact the support."
       render :show, status: :unprocessable_entity
