@@ -1,80 +1,86 @@
-<%= render "events/header" %>
-
-<h1>All your events</h1>
-<hr>
-
-<h2>All events you created:</h2>
-
-<% if @events_created.any? %>
-  <% @events_created.each do | event| %>
-    <div class="event-created">
-      <h3><%= event.name %></h3>
-      <p><%= event.location %></p>
-      <p><%= event.date %></p>
-      <p><%= link_to "View", event_path(event.id) %></p>
-    </div>
-  <% end %>
-<% else %>
- <p> You have not created any events yet. </p>
-<% end %>
-
-<hr>
-
-<% if @upcoming_events.any? %>
-  <h2>Upcoming events:</h2>
-    <% @upcoming_events.each do |event| %>
-      <h3><%= event.name %></h3>
-      <p><%= event.location %></p>
-      <p><%= event.date %></p>
-      <p><%= link_to "View", event_path(event.id) %></p>
+<main class="users-show">
+  <h1>All your events</h1>
+  <div class="cards-container">
+    <h2>All events you created:</h2>
+    
+    
+      <% if @events_created.any? %>
+        <% @events_created.each do | event| %>
+          <div class="event-card gradient-border">
+            <h3><%= event.name %></h3>
+            <hr>
+            <p><%= event.location %></p>
+            <p><%= event.date %></p>
+            <p><%= button_to "View", event_path(event.id), method: :get %></p>
+          </div>
+        <% end %>
+      <% else %>
+       <p> You have not created any events yet. </p>
+      <% end %>
+  
+    
+    <% if @upcoming_events.any? %>
+      <h2>Upcoming events:</h2>
+        <% @upcoming_events.each do |event| %>
+          <div class="event-card gradient-border">
+            <h3><%= event.name %></h3>
+            <hr>
+            <p><%= event.location %></p>
+            <p><%= event.date %></p>
+            <p><%= button_to "View", event_path(event.id), method: :get %></p>
+          </div>
+        <% end %>
     <% end %>
-<% end %>
-
-<hr>
-
-<% if @past_events.any? %>
-  <h2>Past events:</h2>
-    <% @past_events.each do |event| %>
-      <h3><%= event.name %></h3>
-      <p><%= event.location %></p>
-      <p><%= event.date %></p>
-      <p><%= link_to "View", event_path(event.id) %></p>
+    
+    
+    <% if @past_events.any? %>
+      <h2>Events you attended:</h2>
+        <% @past_events.each do |event| %>
+          <div class="event-card gradient-border">
+            <h3><%= event.name %></h3>
+            <hr>
+            <p><%= event.location %></p>
+            <p><%= event.date %></p>
+            <p><%= button_to "View", event_path(event.id), method: :get %></p>
+          </div>
+        <% end %>
     <% end %>
-<% end %>
-
-
-<!--<h2>Attended events:<h2>-->
-  <%# if @attended_events.any? %>
-    <%# @attended_events.each do |event| %>
-<!--    <p><%#= event.name %></p>-->
+  </div>
+  
+  
+  <!--<h2>Attended events:<h2>-->
+    <%# if @attended_events.any? %>
+      <%# @attended_events.each do |event| %>
+  <!--    <p><%#= event.name %></p>-->
+      <%# end %>
+    <%# else %>
+  <!--  <p> No event visits. </p>-->
     <%# end %>
-  <%# else %>
-<!--  <p> No event visits. </p>-->
-  <%# end %>
-
-<!--  <h2>Your upcoming events:</h2>-->
-  <%# if @upcoming_events.any? %>
-    <%# @upcoming_events.each do | event | %>
-<!--      <div class="event-attending">
-        <h3><%#= event.name %></h3>
-        <p><%#= event.location %></p>
-        <p><%#= event.date %></p>
-      </div>
-    <%# end %>-->
-  <%# else %>
-<!--  <p> You have no upcoming events. </p>-->
-  <%# end %>
-<!--  <hr>
-
-  <h2>Past events you attended:</h2>
-  <%# if @past_events.any? %>-->
-    <%# @past_events.each do | event | %>
-<!--      <div class="event-attending">
-        <h3><%#= event.name %></h3>
-        <p><%#= event.location %></p>
-        <p><%#= event.date %></p>
-      </div>
-    <%# end %>-->
-  <%# else %>
-<!--  <p> You have not attended any events yet. </p>-->
-  <%# end %>
+  
+  <!--  <h2>Your upcoming events:</h2>-->
+    <%# if @upcoming_events.any? %>
+      <%# @upcoming_events.each do | event | %>
+  <!--      <div class="event-attending">
+          <h3><%#= event.name %></h3>
+          <p><%#= event.location %></p>
+          <p><%#= event.date %></p>
+        </div>
+      <%# end %>-->
+    <%# else %>
+  <!--  <p> You have no upcoming events. </p>-->
+    <%# end %>
+  <!--  <hr>
+  
+    <h2>Past events you attended:</h2>
+    <%# if @past_events.any? %>-->
+      <%# @past_events.each do | event | %>
+  <!--      <div class="event-attending">
+          <h3><%#= event.name %></h3>
+          <p><%#= event.location %></p>
+          <p><%#= event.date %></p>
+        </div>
+      <%# end %>-->
+    <%# else %>
+  <!--  <p> You have not attended any events yet. </p>-->
+    <%# end %>
+</main>

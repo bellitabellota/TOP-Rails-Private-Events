@@ -1,0 +1,183 @@
+/* Header styles */
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header, .bg-img {
+  width: 100%;
+  height: 45vh;
+  max-height: 350px;
+  min-height: calc(3.75rem + 120px);
+}
+
+.bg-img {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.site-name {
+  font-size: 3.75rem;
+  color: var(--secondary-font-color);
+  border: 3px dashed var(--secondary-font-color);
+  padding: 0 20px;
+  box-shadow: 3px 3px 5px black;
+  text-shadow: 3px 3px 5px black;
+  background-color: rgba(0, 0, 0, 0.171);
+  font-family: "Bruno Ace", sans-serif;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.336);
+  padding: 5px 15px;
+}
+
+nav a {
+  color: var(--secondary-font-color);
+  text-decoration: none;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.596);
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem; /* check if I will use a variable for this size */
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.938);
+}
+
+.photo-credit {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: var(--secondary-font-color);
+  font-size: 0.75rem;
+}
+
+/* components */
+.gradient-border {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(240deg, var(--primary),var(--tertiary), var(--secondary));
+}
+
+.event-card {
+  padding: 5px 15px;
+}
+
+/* Styles for events#index */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.cards-container h2{
+  grid-column-start: 1;
+  grid-column-end: -1;
+  place-self: center;
+}
+
+.events-index h1 {
+  font-size: 1.4rem;
+  padding-top: 15px;
+}
+
+.events-index h2 {
+  font-size: 1.15rem;;
+}
+
+.events-index h3 {
+  font-weight: 600;
+}
+
+/* Styles for events#show */
+.event-details {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-details, .section {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.events-show h1 {
+  font-size: 1.4rem;
+}
+
+.events-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 55vh;
+}
+
+.events-show .event-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Styles for users#show */
+
+.users-show h1 {
+  font-size: 1.4rem;
+  padding-top: 15px;
+}
+
+.users-show  h2 {
+  font-size: 1.15rem;;
+}
+
+.users-show h3 {
+  font-weight: 600;
+}
+
+/* Styles for events#new and events#edit */
+.events-edit h1, .events-new h1, .signup h2 {
+  font-size: 1.4rem;
+  padding-top: 15px;
+}
+
+.signup h2 {
+  text-align: center;
+}
+
+.events-edit form, .events-new form, .signup form, .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.events-edit input, .events-new input, .signup input {
+  padding: 0.25rem 0;
+  margin-bottom: 1rem;
+}
+
+.events-edit, .events-new, .signup {
+ width: 30vw;
+}

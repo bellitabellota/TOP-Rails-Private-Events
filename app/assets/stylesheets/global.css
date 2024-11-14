@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bruno+Ace&family=Iceberg&family=Nova+Square&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bruno+Ace&family=Iceberg&family=Nova+Square&family=Pinyon+Script&family=Zen+Dots&display=swap');
+:root {
+    --primary: #90F56B;
+    --secondary: #2D3F55;
+    --tertiary: #E7998F;
+    --secondary-font-color: white;
+    --blue-500: #0679cc; /* check if I use this */
+  }
+  
+  body {
+    font-family: "Inter var", sans-serif;
+  }
+  
+  a {
+    color: var(--blue-500);
+  }
+
+  h1, h2 {
+    font-family: "Zen Dots", sans-serif;
+  }
+
+  h1 {
+    text-align:center;
+  }
+
+button {
+  color: var(--secondary-font-color);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.863);
+  padding: 7px 12px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 3px;
+  margin-right: auto;
+  margin-bottom: 3px;
+  margin-left: auto;
+  display: block;
+}
+
+button:hover {
+  background: linear-gradient(20deg, var(--primary),var(--tertiary), var(--secondary));
+}
+
+
+main {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.success, .notice, .alert {
+  color: var(--tertiary);
+  text-align: center;
+}
