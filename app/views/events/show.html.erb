@@ -1,42 +1,51 @@
 <main class ="events-show">
+        <% flash.each do |name, message| %>
+        <p></p>
+        <div class="<%= name %>"><%= message %></div>
+      <% end %>
   <div class="event-card gradient-border">
-    <p>The details of the event:</p>
-    <h1><%= @event.name %></h1>
-    <p>Date: <%= @event.date %></p>
-    <p>Location: <%= @event.location %></p>
-    <p>Creator: <%= @event.creator.name %></p>
-    
-    <% if user_signed_in? && !@event.attendees.include?(current_user) %>
-      <%= form_with model: [@event, @event.event_attendings.build ] do | form |%>
-      <%= form.hidden_field :attended_event_id, value: "#{@event.id}" %>
-      <%= form.hidden_field :event_attendee_id, value: "#{current_user.id}" %>
-      <%= form.button "Attend" %>
-      <% end %>
-    <% end %>
-    
-    <% flash.each do |name, message| %>
-      <p></p>
-      <div class="<%= name %>"><%= message %></div>
-    <% end %>
-    
-    <% if user_signed_in? %>
-      <% if @event.creator.name == current_user.name%>
-        <%= button_to "Edit event", edit_event_path(@event), method: :get %>
-        <%= button_to "Delete event", event_path(@event), method: :delete, data: { turbo_confirm: "Are you sure?"}  %>
-      <% end %>
-    <% end %>
-    
-    <% if @event.attendees.any? %>
-      <h2>All attendees</h2>
-      <ul>
-        <% @event.attendees.each do |attendee| %>
-        <li><%= attendee.name %></li>
+    <div class="section">
+      <p>The details of the event:</p>
+      <h1><%= @event.name %></h1>
+      <p>Date: <%= @event.date %></p>
+      <p>Location: <%= @event.location %></p>
+      <p>Creator: <%= @event.creator.name %></p>
+      
+      <% if user_signed_in? && !@event.attendees.include?(current_user) %>
+        <%= form_with model: [@event, @event.event_attendings.build ] do | form |%>
+        <%= form.hidden_field :attended_event_id, value: "#{@event.id}" %>
+        <%= form.hidden_field :event_attendee_id, value: "#{current_user.id}" %>
+        <%= form.button "Attend" %>
         <% end %>
-      </ul>
-    
-      <% if user_signed_in? && @event.attendees.include?(current_user) %>
-        <%= button_to "Withdraw event attendance", [@event, @current_user_attending], method: :delete, data: { turbo_confirm: "Are you sure?"}  %>
       <% end %>
+
+    </div>
+
+    <div class="section">
+      <% if user_signed_in? %>
+        <% if @event.creator.name == current_user.name%>
+          <p>As creator of this event you can modify it:</p>
+          <div class="button-container">
+            <%= button_to "Edit event", edit_event_path(@event), method: :get %>
+            <%= button_to "Delete event", event_path(@event), method: :delete, data: { turbo_confirm: "Are you sure?"}  %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="section">
+      <% if @event.attendees.any? %>
+        <h2>All attendees</h2>
+        <ul>
+          <% @event.attendees.each do |attendee| %>
+          <li><%= attendee.name %></li>
+          <% end %>
+        </ul>
+      
+        <% if user_signed_in? && @event.attendees.include?(current_user) %>
+          <%= button_to "Withdraw event attendance", [@event, @current_user_attending], method: :delete, data: { turbo_confirm: "Are you sure?"}  %>
+        <% end %>
+    </div>
     <% end %>
   </div>
 </main>

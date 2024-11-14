@@ -106,3 +106,39 @@ nav a:hover {
 .events-index h3 {
   font-weight: 600;
 }
+
+/* Styles for events#show */
+.event-details {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-details, .section {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.events-show h1 {
+  font-size: 1.4rem;
+}
+
+.events-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 55vh;
+}
+
+.events-show .event-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+  padding-top: 1rem;
+}
