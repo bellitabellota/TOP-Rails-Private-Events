@@ -158,3 +158,22 @@ nav a:hover {
   font-weight: 600;
 }
 
+/* Styles for events#new and events#edit */
+.events-edit h1, .events-new h1 {
+  font-size: 1.4rem;
+  padding-top: 15px;
+}
+
+.events-edit form, .events-new form {
+  display: flex;
+  flex-direction: column;
+}
+
+.events-edit input, .events-new input {
+  padding: 0.25rem 0;
+  margin-bottom: 1rem;
+}
+
+.events-edit, .events-new {
+ width: 30vw;
+}

@@ -48,6 +48,7 @@ main {
   margin: 0 auto;
 }
 
-.success {
+.success, .notice, .alert {
   color: var(--tertiary);
+  text-align: center;
 }
