@@ -142,3 +142,19 @@ nav a:hover {
   gap: 1rem;
   padding-top: 1rem;
 }
+
+/* Styles for users#show */
+
+.users-show h1 {
+  font-size: 1.4rem;
+  padding-top: 15px;
+}
+
+.users-show  h2 {
+  font-size: 1.15rem;;
+}
+
+.users-show h3 {
+  font-weight: 600;
+}
+
