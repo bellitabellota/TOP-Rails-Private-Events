@@ -1,14 +1,33 @@
-![image](https://github.com/user-attachments/assets/921b83fc-31d3-42ee-9ed2-7e4e015403c0)
-
-
 # TOP Project: Private events
+
+![image](https://github.com/user-attachments/assets/921b83fc-31d3-42ee-9ed2-7e4e015403c0)
+## Screenshots
+
+Events#index page (in logged in view)
+![image](https://github.com/user-attachments/assets/a2a0fa58-64c2-425b-94b0-ccb4a4005dc7)
+
+
+Events#view page
+![Screenshot from 2024-11-14 15-26-06](https://github.com/user-attachments/assets/a1286a78-d6dd-468a-a01c-86824ce7d207)
+
+Users#view page
+
+![Screenshot from 2024-11-14 15-26-31](https://github.com/user-attachments/assets/5efe3457-d237-46b2-ae3d-248920758d57)
+
+To open this project locally on your computer, after cloning the project from git and entering the repository folder the following commands need to be run:
+
+      rails db:migrate
+      
+      rails db:seed
+
+
+## TOP Assignment instructions
 You want to build a site similar to a private [Eventbrite](http://www.eventbrite.com/) which allows users to create events and then manage user signups.
 
 A user can create events. A user can attend many events. An event can be attended by many users. Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
 
 This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
-## TOP Assignment instructions
 We’ve gotten quite far here, so these tasks will only lay out the high level overview of what you’re meant to build. You’ll need to implement the details yourself. As usual, it’s not meant to look pretty, just work. Design is all extra credit.
 
 ### Setup
