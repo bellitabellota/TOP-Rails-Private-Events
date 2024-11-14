@@ -1,16 +1,16 @@
-<main> 
+<main class="events-index"> 
   <h1>Event Overview</h1>
 
   <% if Event.upcoming.any?%>
     <div class="cards-container">
       <h2>Upcoming Events</h2>
       <% Event.upcoming.each do |event| %>
-        <div class="event-card">
+        <div class="event-card gradient-border">
           <h3><%= event.name %></h3>
           <hr>
           <p><%= event.location %></p>
           <p><%= event.date %></p>
-          <p class="view-link"><%= link_to "View", event_path(event.id) %></p>
+          <%= button_to "View", event_path(event.id) %>
         </div>
       <% end %>
     </div>
@@ -20,17 +20,14 @@
     <div class="cards-container">
       <h2>Past Events</h2>
       <% Event.past.each do |event| %>
-        <div class="event-card">
+        <div class="event-card gradient-border">
           <h3><%= event.name %></h3>
           <hr>
           <p><%= event.location %></p>
           <p><%= event.date %></p>
-          <p class="view-link"><%= link_to "View", event_path(event.id) %></p>
+          <%= button_to "View", event_path(event.id) %>
         </div>
       <% end %>
     </div>
   <% end %>
-  
-  
-  
 </main>

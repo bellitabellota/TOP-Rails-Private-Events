@@ -1,3 +1,5 @@
+/* Header styles */
+
 header {
   position: relative;
   display: flex;
@@ -20,8 +22,8 @@ header, .bg-img {
 
 .site-name {
   font-size: 3.75rem;
-  color: white;
-  border: 3px dashed white;
+  color: var(--secondary-font-color);
+  border: 3px dashed var(--secondary-font-color);
   padding: 0 20px;
   box-shadow: 3px 3px 5px black;
   text-shadow: 3px 3px 5px black;
@@ -43,13 +45,13 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--secondary-font-color);
   text-decoration: none;
   margin: 0 5px;
   background-color: rgba(0, 0, 0, 0.596);
   padding: 3px 10px;
   border-radius: 15px;
-  font-size: 0.9rem;
+  font-size: 0.9rem; /* check if I will use a variable for this size */
 }
 
 nav a:hover {
@@ -61,14 +63,23 @@ nav a:hover {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  color: white;
+  color: var(--secondary-font-color);
   font-size: 0.75rem;
 }
 
-main {
-  width: 60vw;
-  margin: 0 auto;
+/* components */
+.gradient-border {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(240deg, var(--primary),var(--tertiary), var(--secondary));
 }
+
+.event-card {
+  padding: 5px 15px;
+}
+
+/* Styles for events#index */
 
 .cards-container {
   display: grid;
@@ -83,28 +94,15 @@ main {
   place-self: center;
 }
 
-.event-card {
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(240deg, #90F56B,#E7998F, #2D3F55);
-  border-radius: 15px;
-  padding: 3px 15px;
+.events-index h1 {
+  font-size: 1.4rem;
+  padding-top: 15px;
 }
 
-.event-card a {
-  color: white;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.863);
-  padding: 7px 12px;
-  border-radius: 15px;
+.events-index h2 {
+  font-size: 1.15rem;;
 }
 
-.event-card a:hover {
-  background: linear-gradient(20deg, #90F56B,#E7998F, #2D3F55);
-}
-
-.view-link {
-  text-align: center;
-  margin: 10px 0;
+.events-index h3 {
+  font-weight: 600;
 }
