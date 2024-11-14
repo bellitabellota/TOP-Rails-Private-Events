@@ -159,21 +159,25 @@ nav a:hover {
 }
 
 /* Styles for events#new and events#edit */
-.events-edit h1, .events-new h1 {
+.events-edit h1, .events-new h1, .signup h2 {
   font-size: 1.4rem;
   padding-top: 15px;
 }
 
-.events-edit form, .events-new form {
+.signup h2 {
+  text-align: center;
+}
+
+.events-edit form, .events-new form, .signup form, .field {
   display: flex;
   flex-direction: column;
 }
 
-.events-edit input, .events-new input {
+.events-edit input, .events-new input, .signup input {
   padding: 0.25rem 0;
   margin-bottom: 1rem;
 }
 
-.events-edit, .events-new {
+.events-edit, .events-new, .signup {
  width: 30vw;
 }
